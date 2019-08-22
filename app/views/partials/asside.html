@@ -1,6 +1,6 @@
 <aside ng-controller="asideCtrl" >
-    <div class="card" style="height: 800px; overflow: scroll"ng-if="isLogin() === true">
-        <div class="card-header">
+    <div class="card" ng-if="isLogin() === true" >
+        <div class="card-header bg-primary text-white">
             <h4> Danh mục môn học</h4>
         </div>
         <div  ng-controller="Subject1Ctrl">

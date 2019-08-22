@@ -1,40 +1,50 @@
-<div  ng-controller='RegisterCtrl'>
-  <h3> Register</h3>
-  <form   method=POST  name="registerForm">
+<div ng-controller='RegisterCtrl'>
+  <h3 class="alert alert-success">Đăng ký tài khoản và làm bài quizz nào!</h3>
+  <form method=POST name="registerForm">
+    <div class="col-md-6">
       <div class="row">
-          <div class="alert alert-danger" ng-if="errorMessage != null">{{errorMessage}}</div>
-      </div>
-    <div class="form-group">
-      <label for="">Username</label>
-      <input type="text" class="form-control" placeholder="" ng-model="registerForm.username">
-    </div>
-    <div class="form-group">
-      <label for="">Password</label>
-      <input type="password" class="form-control" placeholder="" ng-model="registerForm.password">
-    </div>
-    <div class="form-group">
-      <label for="">Full name</label>
-      <input type="text" class="form-control" placeholder="" ng-model="registerForm.fullname">
-    </div>
-    <div class="form-group">
-      <label for="">Email</label>
-      <input type="email" class="form-control" placeholder="" ng-model="registerForm.email">
-    </div>
-    <div class="form-group">
-      <label for="">Gender</label>
-      <select  ng-model='registerForm.gender' class="form-control">
-        <option value="true" >Male</option>
-        <option value="false">Female</option>
-      </select>
-    </div>
-    <div class="form-group">
-        <label for="">Birthday</label>
-        <input type="date" class="form-control" placeholder="" ng-model="registerForm.birthday">
+        <div class="alert alert-danger" ng-if="errorMessage != null">{{errorMessage}}</div>
       </div>
       <div class="form-group">
-          <label for="">schoolfee</label>
-          <input type="number" class="form-control" placeholder="" ng-model="registerForm.schoolfee">
-        </div>
-        <input type="submit" value="Register" ng-click="Register();">
+        <label class="badge badge-primary"  for="">Username</label>
+        <input type="text" class="form-control" placeholder="" ng-model="registerForm.username">
+      </div>
+      <div class="form-group">
+        <label class="badge badge-primary" for="">Password</label>
+        <input type="password" class="form-control" placeholder="" ng-model="registerForm.password">
+      </div>
+      <div class="form-group">
+        <label class="badge badge-primary" for="">Full name</label>
+        <input type="text" class="form-control" placeholder="" ng-model="registerForm.fullname">
+      </div>
+      <div class="form-group">
+        <label class="badge badge-primary" for="">Email</label>
+        <input type="email" class="form-control" placeholder="" ng-model="registerForm.email">
+        <span ng-show="registerForm.email.$error.email">Invalid email address.</span>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 ">
+        <div class="form-group">
+            <label class="badge badge-primary" for="">Gender</label>
+            <select ng-model='registerForm.gender' class="form-control">
+              <option value="true">Male</option>
+              <option value="false">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="badge badge-primary" for="">Birthday</label>
+            <input type="date" class="form-control" placeholder="" ng-model="registerForm.birthday">
+          </div>
+          <div class="form-group">
+            <label class="badge badge-primary" for="">schoolfee</label>
+            <input type="number" class="form-control" placeholder="" ng-model="registerForm.schoolfee">
+          </div>
+    </div>
+    <div class="col-md-12">
+        <input class="btn btn-success" type="submit" value="Register" ng-click="Register();">
+    </div>
+    
   </form>
 </div>

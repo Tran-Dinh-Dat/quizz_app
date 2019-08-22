@@ -20,9 +20,6 @@ angular.module('myApp.student', ['ngRoute'])
             }).when('/forgotPw', {
                 templateUrl: 'views/students/forgotPw.html',
                 controller: 'forgot'
-            }).when('/login2', {
-                templateUrl: 'views/students/login2.html',
-                controller: 'LoginCtrl'
             }).when('/profile', {
                 templateUrl: 'views/students/profile.html',
                 controller: 'profile'
@@ -64,8 +61,10 @@ angular.module('myApp.student', ['ngRoute'])
             var data = studentFactory.checkLogin2($scope.loginForm.username, $scope.loginForm.password);
             if (data != null && data.length > 0) {
                 studentFactory.setIsLogin(true);
-                $location.path('/');
+                alert('Đang nhập thành công!');
+                $location.path('/listSubjects');
                 $scope.errorMessage = null;
+               
             } else {
                 studentFactory.setIsLogin(false);
                 $scope.errorMessage = "Invalid username or password";
@@ -117,7 +116,8 @@ angular.module('myApp.student', ['ngRoute'])
                         var movies2 = JSON.parse(retrievedData);
                         console.log(movies2);
                         // sessionStorage.clear();
-                        window.location.href = "http://127.0.0.1:5500/asm/app/index.html#!/login2";
+                        alert('Đăng ký thành công!');
+                        window.location.href = "http://127.0.0.1:8000/index.html#!/login2";
                     }
                 }
             )
@@ -132,7 +132,7 @@ angular.module('myApp.student', ['ngRoute'])
         $scope.checkemail = () => {
             var data = studentFactory.checkemail($scope.fogotPwform.email);
             if (data != null && data.length > 0) {
-                window.location.href = "http://127.0.0.1:5500/asm/app/index.html#!/repassord";
+                window.location.href = "http://127.0.0.1:8000/index.html#!/repassord";
             } else {
 
                 $scope.errorMessage = "Email doean't register";
@@ -149,7 +149,7 @@ angular.module('myApp.student', ['ngRoute'])
                 // $scope.errorMessage = "ok";
 
                 alert('change passwoed success')
-                window.location.href = "http://127.0.0.1:5500/asm/app/index.html#!/login2";
+                window.location.href = "http://127.0.0.1:8000/index.html#!/login2";
             } else {
 
                 $scope.errorMessage = "Pawword incorect";

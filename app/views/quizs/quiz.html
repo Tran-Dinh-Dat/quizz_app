@@ -6,7 +6,7 @@
         <div class="row" ng-if="sumup === false">
             <div class="card col-10" >
                 <div class="card-header">
-                    <div>Time: {{min}}m {{sec}}s</div>
+                    <div>Time: {{min | number:0}}m {{sec}}s</div>
                     <div>Question {{currentQuestion + 1}}: {{question().Marks}} Marks</div>
                 </div>
                 <div class="card-body">

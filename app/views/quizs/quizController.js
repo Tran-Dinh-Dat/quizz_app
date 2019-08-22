@@ -15,10 +15,15 @@ angular.module('myApp.quiz', ['ngRoute','ui.bootstrap'])
         $scope.min = 0;
         $scope.quizMarks = 0;
         $scope.answer = {};
-        $scope.sec = 0;
+        $scope.sec = 60*60;
 
-        var stopmin = $interval(()=>{$scope.min ++}, 60000);
-        var stopsec= $interval(()=>{$scope.sec ++}, 1000);
+        var stopmin = $interval(()=>{$scope.min --}, 60000);
+        var stopsec= $interval(()=>{$scope.sec --
+      
+            if ($scope.sec ===  0) {
+                $scope.submitQuiz();
+            }
+        }, 1000);
         quizFactory.getQuestions($routeParams.subjectCode).then((data)=>{
             $scope.questions = data;
         });

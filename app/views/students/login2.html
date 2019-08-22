@@ -1,23 +1,22 @@
 <div class="container" ng-controller="LoginCtrl">
-    <div class="row"><br /></div>
-    <div class="row">
-        <div class="alert alert-danger" ng-if="errorMessage != null">{{errorMessage}}</div>
-    </div>
-
-        <form name="loginForm">
+    
+    <div class="col-md-6 col-md-offset-3">
+        <h3 class="alert alert-warning">Vui lòng đăng nhập để làm bài quizz nhé!</h3>
+        <p class="alert alert-danger" ng-if="errorMessage != null">{{errorMessage}}</p>
+        <form name="loginForm ">
             <div class="form-group">
-                Username:
+                <label class="bagerbadge badge-primary p-1">Username</label>
                 <input type="text" ng-model="loginForm.username" width="300px"class="form-control"
                     placeholder="Username" ng-value="pheonv">
             </div>
             <div class="form-group">
-                Password:
+                    <label class="bagerbadge badge-danger p-1">Password</label>
                 <input type="password" ng-model="loginForm.password" width="300px"class="form-control"
                     placeholder="Username" value="iloveyou">
             </div>
             <input type="submit" class="btn btn-success" value="Login" ng-click="checkLogin2();">
             <a ng-href="#!/forgotPw" class="btn btn-danger"> Forgot password</a>
         </form>
-
+    </div>
 
 </div>

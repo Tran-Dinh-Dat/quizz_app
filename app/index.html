@@ -21,10 +21,11 @@
 <body ng-app="myApp">
   <div ng-include="'views/partials/nav.html'"></div>
   <div class="container" >
-    <div class="col-md-9">
-      <div ng-view></div>
-  </div>
-    <div class="col-md-3">
+    <div ng-view class="col-md-9">
+     
+    </div>
+
+    <div  class="col-md-3">
       <div ng-include="'views/partials/asside.html'"></div>
   </div>
   </div>
